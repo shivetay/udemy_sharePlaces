@@ -6,9 +6,9 @@ import '../../../styles/global.scss';
 const Layout = ({ title, description, className, children }) => {
   return (
     <div>
-      <div className='jumbotron'>
+      <div className=''>
         <h2>{title}</h2>
-        <p className='lead'>{description}</p>
+        <p className=''>{description}</p>
       </div>
 
       <main className={className}>{children}</main>
