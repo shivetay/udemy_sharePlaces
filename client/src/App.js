@@ -1,13 +1,20 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+
 import MainLayout from './components/layout/MainLayout/MainLayout';
+import Home from './components/views/Home/Home';
+import Users from './components/views/Users/Users';
 
 const App = () => {
   return (
-    <section>
+    <BrowserRouter>
       <MainLayout>
-        <h1>Main</h1>
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/users' component={Users} />
+        </Switch>
       </MainLayout>
-    </section>
+    </BrowserRouter>
   );
 };
 
