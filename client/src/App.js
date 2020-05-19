@@ -1,10 +1,13 @@
 import React from 'react';
+import MainLayout from './components/layout/MainLayout/MainLayout';
 
 const App = () => {
   return (
-    <div>
-      <h1>App.js</h1>
-    </div>
+    <section>
+      <MainLayout>
+        <h1>Main</h1>
+      </MainLayout>
+    </section>
   );
 };
 
