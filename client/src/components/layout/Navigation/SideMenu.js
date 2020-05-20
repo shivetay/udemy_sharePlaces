@@ -4,8 +4,12 @@ import ReactDOM from 'react-dom';
 
 import './SideMenu.scss';
 
-const SideMenu = ({ children }) => {
-  const content = <aside className='side-drawer'>{children}</aside>;
+const SideMenu = ({ children, onClick }) => {
+  const content = (
+    <aside className='side-drawer' onClick={onClick}>
+      {children}
+    </aside>
+  );
 
   return ReactDOM.createPortal(content, document.getElementById('side-nav'));
 };
