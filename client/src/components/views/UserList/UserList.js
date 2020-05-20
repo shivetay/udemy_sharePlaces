@@ -3,7 +3,7 @@ import React from 'react';
 import User from '../User/User';
 
 const UserList = (props) => {
-  if (props.users.lenth === 0) {
+  if (props.users.length === 0) {
     return (
       <div className=''>
         <h2>No Users found</h2>
