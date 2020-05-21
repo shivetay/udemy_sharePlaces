@@ -1,10 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import PlaceItem from '../Places/PlaceList';
 
 const DUMMY_PLACES = [
   {
-    id: 1,
+    id: '1',
     title: 'Wilczyce',
     description: 'Small town near Wrocław',
     imageUrl:
@@ -14,10 +15,10 @@ const DUMMY_PLACES = [
       lat: 51.1299765,
       lng: 17.1419853,
     },
-    creator: 1,
+    creator: '1',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Wrocław',
     description: 'Big town near Wilczyce',
     imageUrl:
@@ -27,12 +28,15 @@ const DUMMY_PLACES = [
       lat: 51.1299765,
       lng: 17.1419853,
     },
-    creator: 1,
+    creator: '2',
   },
 ];
 
 const UserPlaces = () => {
-  return <PlaceItem places={DUMMY_PLACES} />;
+  const userId = useParams().userId;
+  const loadPlaces = DUMMY_PLACES.filter((place) => place.creator === userId);
+
+  return <PlaceItem places={loadPlaces} />;
 };
 
 export default UserPlaces;
