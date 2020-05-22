@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
 import { validate } from './Validator';
 import './Input.scss';
@@ -28,6 +28,10 @@ const Input = (props) => {
     isTouched: false,
     isValid: false,
   });
+
+  useEffect(() => {
+    props.onIput(props.id, inputState.value, inputState.isValid);
+  }, [props, inputState]);
 
   const changeHandler = (event) => {
     dispatch({
