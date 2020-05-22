@@ -5,6 +5,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import Home from './components/views/Home/Home';
 import Users from './components/views/Users/Users';
 import UserPlaces from './components/views/UserPlaces/UserPlaces';
+import NewPlace from './components/views/NewPlace/NewPlace';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/users' component={Users} />
           <Route exact path='/:userId/places' component={UserPlaces} />
+          <Route exact path='/places/new' component={NewPlace} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
